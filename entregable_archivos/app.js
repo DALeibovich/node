@@ -2,7 +2,7 @@
 /********* PANEL DE COMANDOS *****************/
 
 // Variables para el funcionamiento del test
-let ejecutar = 'save'; // comandos a utilizar: save, getAll, getById, deleteById, deleteAll
+let ejecutar = 'getAll'; // comandos a utilizar: save, getAll, getById, deleteById, deleteAll
 let nombreArchivo = 'productos.txt'; //se genera en el directorio /DB/
 let id_getById = 5; // id usado para traer un objeto
 let id_deleteById = 4; // id usado para borrar un objeto
