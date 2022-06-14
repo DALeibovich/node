@@ -1,0 +1,14 @@
+
+1) ejecutar app.js
+2) comandos a utilizar: save, getAll, getById, deleteById, deleteAll
+3) Archivos txt genrados en el directorio /DB/
+
+/********* PANEL DE COMANDOS *****************/
+
+// Variables para el funcionamiento del test
+let ejecutar = 'save'; // comandos a utilizar: save, getAll, getById, deleteById, deleteAll
+let nombreArchivo = 'productos.txt'; //se genera en el directorio /DB/
+let id_getById = 5; // id usado para traer un objeto
+let id_deleteById = 4; // id usado para borrar un objeto
+
+/**********************************************/
