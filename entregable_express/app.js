@@ -4,7 +4,7 @@ const app = express();
 const port = 8080;
 
 const nombreArchivo = 'productos.txt';
-const Contenedor = require('./Clases/Contenedor.js');
+const Contenedor = require('./Clases/Contenedor');
 let archivoLibros = new Contenedor(nombreArchivo, fs);
 let productos = [];
 
