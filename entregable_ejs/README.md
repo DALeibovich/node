@@ -8,24 +8,24 @@
 
 ### Estructura de archivos HTML. HBS, PUG, EJS
 
-/public/index.html
-/views/productos.hbs
-      /productos.pug
-      /productos.ejs
+<br> /public/index.html
+<br> /views/productos.hbs
+<br> /views/productos.pug
+<br> /views/productos.ejs
 
-/views/layouts/index.hbs
-              /index.pug
-              /index.ejs
+<br> /views/layouts/index.hbs
+<br> /views/layouts/index.pug
+<br> /views/layouts/index.ejs
 
 ### Estructura de archivos JS
-/index.js
-/controllers/productos.js
-/routes/productos.js
-/models/Contenedor.js
-/DB/productos.txt
+<br>/index.js
+<br>/controllers/productos.js
+<br>/routes/productos.js
+<br>/models/Contenedor.js
+<br>/DB/productos.txt
 
 ### endPoints
-/productos/hbs
-/productos/pug
-/productos/ejs
+<br>/productos/hbs
+<br>/productos/pug
+<br>/productos/ejs
 
