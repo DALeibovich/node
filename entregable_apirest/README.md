@@ -7,16 +7,16 @@
 1) http://127.0.0.1:8080/
 
 ### endPoints
-/api/productos (GET)
-/api/productos/:id (GET, POST, PUT, DELETE)
-/api/guardar (POST)
+/api/productos (GET)<br>
+/api/productos/:id (GET, POST, PUT, DELETE)<br>
+/api/guardar (POST)<br>
 
 
 ### Estructura de archivos
 
-/index.js
-/controllers/productos.js
-/routes/productos.js
-/models/Contenedor.js
-/DB/productos.txt
-/public/index.html
+/index.js<br>
+/controllers/productos.js<br>
+/routes/productos.js<br>
+/models/Contenedor.js<br>
+/DB/productos.txt<br>
+/public/index.html<br>
