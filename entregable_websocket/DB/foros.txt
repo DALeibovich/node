@@ -4,35 +4,5 @@
     "msg": "Bienvenido",
     "fecha": 1656337272772,
     "agregadoPor": "davidleibovich@gmail.com"
-  },
-  {
-    "id": 2,
-    "msg": "hola",
-    "fecha": 1656339637745,
-    "agregadoPor": "juan@"
-  },
-  {
-    "id": 3,
-    "msg": "fsdfsdf",
-    "fecha": 1656340018047,
-    "agregadoPor": "david@"
-  },
-  {
-    "id": 4,
-    "msg": "fsdfsdf",
-    "fecha": 1656340098139,
-    "agregadoPor": "david@"
-  },
-  {
-    "id": 5,
-    "msg": "rrrr",
-    "fecha": 1656340107975,
-    "agregadoPor": "sdfsdfs"
-  },
-  {
-    "id": 6,
-    "msg": "ddddd",
-    "fecha": 1656340140648,
-    "agregadoPor": "david"
   }
 ]

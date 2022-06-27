@@ -22,13 +22,5 @@
     "precio": 35.5,
     "foto": "https://images.cdn2.buscalibre.com/fit-in/360x360/e3/bc/e3bcd85377567759874a0664f894a67b.jpg",
     "agregadoPor": "davidleibovich@gmail.com"
-  },
-  {
-    "id": 4,
-    "nombre": "El señor de los anillos",
-    "autor": "J. J.  Tolken",
-    "precio": "34.50",
-    "foto": "https://http2.mlstatic.com/D_NQ_NP_734355-MLA50214993545_062022-O.webp",
-    "agregadoPor": "david@"
   }
 ]
