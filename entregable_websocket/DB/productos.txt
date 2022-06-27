@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "nombre": "Como agua para chocolate",
+    "autor": "Laura Esquivel",
+    "precio": 28.45,
+    "foto": "https://cdnlaol.laanonimaonline.com/web/images/productos/b/0000012000/12198.jpg",
+    "agregadoPor": "davidleibovich@gmail.com"
+  },
+  {
+    "id": 2,
+    "nombre": "El principito",
+    "autor": "Antoine de Saint-Exupéry",
+    "precio": 13.15,
+    "foto": "https://images.cdn1.buscalibre.com/fit-in/360x360/34/29/34292c8e89f726f2ef8924073ff4c382.jpg",
+    "agregadoPor": "davidleibovich@gmail.com"
+  },
+  {
+    "id": 3,
+    "nombre": "Harry Potter y la Piedra Filosofal",
+    "autor": "J. K. Rowling ",
+    "precio": 35.5,
+    "foto": "https://images.cdn2.buscalibre.com/fit-in/360x360/e3/bc/e3bcd85377567759874a0664f894a67b.jpg",
+    "agregadoPor": "davidleibovich@gmail.com"
+  },
+  {
+    "id": 4,
+    "nombre": "El señor de los anillos",
+    "autor": "J. J.  Tolken",
+    "precio": "34.50",
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_734355-MLA50214993545_062022-O.webp",
+    "agregadoPor": "david@"
+  }
+]
