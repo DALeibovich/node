@@ -1,18 +1,14 @@
-// creamos el contenedor de archivo
-const fs = require('fs');
-const { isObject } = require('util');
+/****** CONEXION BASE DE DATO SQLite3 ************/
+const { db_sqlite } = require('./conexionDB');
+let archivoForos = db_sqlite;
 
-// incluimos el contenedor de archivo con su modelo de datos
 
-/****** CON CONTENDOR DE ARCHIVO ************/
+/****** CONTENDOR DE ARCHIVO ************/
+//const fs = require('fs');
 //const Contenedor = require('../models/Contenedor');
 //const nombreArchivoForo = 'foros.txt'; 
 //let archivoForos = new Contenedor(nombreArchivoForo, fs);
 
-
-/****** CONEXION BASE DE DATO SQLite3 ************/
-const { db_sqlite } = require('./conexionDB');
-let archivoForos = db_sqlite;
 
 // obtenemos todos los productos del archivo
 archivoForos.getAll()

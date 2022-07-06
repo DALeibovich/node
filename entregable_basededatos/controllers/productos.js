@@ -1,16 +1,12 @@
-// creamos el contenedor de archivo
-const fs = require('fs');
-const { isObject } = require('util');
-// incluimos el contenedor de archivo con su modelo de datos
+/****** CONEXION BASE DE DATO MYSQL ************/
+const { db_mysql } = require('./conexionDB');
+let archivoLibros = db_mysql;
 
 /****** CON CONTENDOR DE ARCHIVO ************/
+//const fs = require('fs');
 //const Contenedor = require('../models/Contenedor');
 //const nombreArchivo = 'productos.txt';
 //let archivoLibros = new Contenedor(nombreArchivo, fs);
-
-/****** CONEXION BASE DE DATO MYSQL ************/
-const {db_mysql} = require('./conexionDB');
-let archivoLibros = db_mysql;
 
 // funciones para emitir por socket
 const emitirProductosSocket = (io, socket) => {
@@ -18,13 +14,10 @@ const emitirProductosSocket = (io, socket) => {
     socket.emit('productos', archivoLibros.arrObjetos);
 }
 
- const agregarProductoSocket = (io, socket) => {
+const agregarProductoSocket = (io, socket) => {
     socket.on('agregarProducto', function (data) {
         console.log(data);
         archivoLibros.save(data);
-        // emite al mismo que lo agrego    
-        //socket.emit('productos', archivoLibros.arrObjetos);
-        //socket.emit('agregadoPor', data);
 
         // emite a todos los que escuchando el socket
         io.sockets.emit('productos', archivoLibros.arrObjetos);
