@@ -1,6 +1,4 @@
-# WEBSOCKETS
-
-
+# BASE DE DATOS + WEBSOCKETS + MOTORES DE PLANTILLAS
 ## Ejecución
 1) ejecutar node ./server.js o  npm start
 
@@ -15,7 +13,7 @@
 #### /DB/ecommerce.sqlite
 #### /models/ [KnexDB.js | Contenedor.js]
 #### /controllers/conexionDB.js
-#### /controllers/config/ [mysql.js | sqlite.js]
+#### /controllers/config/ [mysql.js | sqlite3.js]
 
 
 
