@@ -33,7 +33,7 @@ let productos = [
 ];
 db.productos.insertMany(productos);
 
-/*********** LISTAR TODOS LOS PRODUCTOS DE CADA COLECCION ****************************/
+/*********** LISTAR TODOS LOS DOCUMENTOS DE CADA COLECCION ****************************/
 db.mensajes.find();
 db.productos.find();
 
@@ -42,17 +42,17 @@ db.mensajes.estimatedDocumentCount();
 db.productos.estimatedDocumentCount();
 
 /***************** CRUD *********************************/
-// Create
+// CREATE
 db.productos.insertOne({ nombre: "Harry Potter y la Piedra Filosofal", autor: "J. K. Rowling ", precio: 355, foto: "https://images.cdn2.buscalibre.com/fit-in/360x360/e3/bc/e3bcd85377567759874a0664f894a67b.jpg", agregadoPor: "davidleibovich@gmail.com" });
-// Read
+// READ
 db.productos.find({ "precio": { $lt: 1000 } }, { "nombre": 1 });
 db.productos.find({ "precio": { $gte: 1000, $lte: 3000 } }, { "nombre": 1 });
 db.productos.find({ "precio": { $gt: 3000 } }, { "nombre": 1 });
 db.productos.find().skip(2).limit(1).sort({ "precio": 1 })
-// Update
+// UPDATE
 db.productos.updateMany({}, { $set: { "stock": 100 } });
 db.productos.updateMany({ "precio": { $gt: 4000 } }, { $set: { "stock": 0 } });
-// delete
+// DELETE
 db.productos.deleteMany({ "precio": { $lt: 1000 } });
 
 // conectamos a la DB admin para poder crear el user
