@@ -31,5 +31,27 @@
     "codigo": "003",
     "stock": 1,
     "timestamp": 1656800598526
+  },
+  {
+    "id": 1,
+    "nombre": "El señor de los anillos",
+    "autor": "J. J. Tolken ",
+    "foto": "https://www.muscaria.com/images/portadas/p_225/senor-anillos-comunidad-anillo-bolsillo.jpg",
+    "precio": 65.9,
+    "descripcion": "Libro de Fantasia",
+    "codigo": "abc123456",
+    "stock": 0,
+    "timestamp": 1657635559589
+  },
+  {
+    "id": 1,
+    "nombre": "El señor de los anillos",
+    "autor": "J. J. Tolken ",
+    "foto": "https://www.muscaria.com/images/portadas/p_225/senor-anillos-comunidad-anillo-bolsillo.jpg",
+    "precio": 65.9,
+    "descripcion": "Libro de Fantasia",
+    "codigo": "abc123456",
+    "stock": 0,
+    "timestamp": 1657635562013
   }
 ]

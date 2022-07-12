@@ -1,27 +1,37 @@
 // obtenemos el controlador de productos con sus funciones
-const { eliminarProductosCarrito, listarProductosCarrito, archivoCarritos, nuevoCarrito, borrarCarrito, agregarProducto} = require('../controllers/carritos');
+const { listarCarritos, borrarCarritos, eliminarProductosCarrito, listarProductosCarrito, archivoCarritos, nuevoCarrito, agregarProducto} = require('../controllers/carritos');
+//const { listarCarritos, borrarCarritos} = require('../controllers/carritos2');
 
 // creamos el ruteo de la api 
 const express = require('express');
 const { Router } = express;
 const router = Router();
 
-// rutea todos los productos 
+// rutea todos los carritos 
 router.get('/', (req, res) => {
-    res.status(200).send(archivoCarritos.arrObjetos);
+    listarCarritos()
+    .then((rows) => {
+        res.status(200).send(rows);
+    })
 });
 
-// rutea el producto segun ID
+// rutea el carrito segun ID
 router.get('/:id', (req, res) => {
+    listarCarritos(req.params.id)
+    .then((rows) => {
+        res.status(200).send(rows);
+    })});
 
-    // Busca un objeto por ID
-    let objeto = existeProducto(parseInt(req.params.id));
-    (objeto === undefined) ? res.status(404).json({ error: 'Producto no encontrado' }) : res.status(200).json(objeto);
-});
+// endPoint para agregar carritos
 
-// endPoint para agregar productos
 router.post('/', (req, res) => {
-
+    nuevoCarrito()
+         .then(response => {
+             res.status(201).json(response)
+         })
+         .catch(err => console.log(err));
+});
+/*router.post('/', (req, res) => {
     if (req.body.id === undefined) {
         // agrega un producto nuevo y le asigna un ID
         let carritoNuevo = nuevoCarrito();
@@ -33,35 +43,36 @@ router.post('/', (req, res) => {
             .catch(err => console.log(err));
     }
 });
+*/
 
-// endPoint para borrar productos
+// endPoint para borrar carritos
 router.delete('/:id', (req, res) => {
-    // Borrar un objeto por ID
-    borrarCarrito(parseInt(req.params.id))
+     borrarCarritos(req.params.id)
         .then((response) => {
             res.json(response);
         })
 
 });
 
-
+// endPoint para listar productos del carritos
 router.get('/:id/productos', (req, res) => {
-    listarProductosCarrito(parseInt(req.params.id))
+    listarProductosCarrito((req.params.id))
     .then((response) => {
         res.json(response);
     })
 });
 
-
+// endPoint para agregar un producto al carrito
 router.post('/:id/productos', (req, res) => {
-    agregarProducto(parseInt(req.params.id), parseInt(req.body.id))
+    agregarProducto((req.params.id), (req.body.id))
     .then((response) => {
         res.json(response);
     })
 });
 
+// endPoint para eliminar un producto al carrito
 router.delete('/:id/productos/:id_prod', (req, res) => {
-    eliminarProductosCarrito(parseInt(req.params.id), parseInt(req.params.id_prod))
+    eliminarProductosCarrito((req.params.id), (req.params.id_prod))
     .then((response) => {
         res.json(response);
     })
