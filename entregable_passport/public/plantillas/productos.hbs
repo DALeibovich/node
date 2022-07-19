@@ -1,0 +1,24 @@
+
+<table class="table">
+  <thead>
+    <tr class="bg-dark text-white">
+      <th scope="col">Nombre</th>
+      <th scope="col">Autor</th>
+      <th scope="col">precio</th>
+      <th scope="col">Foto</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each productos}}
+    <tr class="bg-secondary text-white">
+        <td ><h5>{{nombre}}</h5>
+        <em>Agregado por: <br>{{agregadoPor}}</em>
+        </td>
+        <td>{{autor}}</td>
+        <td>{{precio}}</td>
+        <td><img src="{{foto}}" width="60px"></td>
+    </tr>
+    {{/each}}
+ 
+  </tbody>
+</table>
