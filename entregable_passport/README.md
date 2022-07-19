@@ -13,7 +13,7 @@
 #### /routes/login.js
 #### /models/User.js
 #### /middlewares/controlLoginPassportLocal.js
-#### /controllers/login.js
+#### /controllers/strategy-validation/localPassport.js
 #### /views/layouts/login.hbs
 #### /views/layouts/logout.hbs
 #### /views/layouts/signup.hbs
