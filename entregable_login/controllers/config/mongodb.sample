@@ -1,3 +1,3 @@
-const mongodbconn = 'mongodb+srv://prueba:EvyYFC1fQkdsviyJ@cluster0.ilnwh.mongodb.net/ecommerce?retryWrites=true&w=majority';
+const mongodbconn = '';
 
 module.exports = mongodbconn;
