@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Logout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body class="container">
+    <div class="page-header">
+        <h1>Información de procesos</h1>
+    </div>
+
+
+
+    <div class="container row">
+        <div class="jumbotron col-sm-8 pull-center">
+            <b>Argumentos de entrada:</b><br> {{process.argv}}<br />
+            <b>Path de ejecución:</b><br> {{process.cwd}}<br />
+            <b>Nombre de la plataforma:</b><br> {{process.platform}} / {{process.arch}}<br />
+            <b>Process id:</b><br> {{process.pid}}<br />
+            <b>Versión de node.js:</b><br> {{process.version}}<br />
+           <b>Carpeta del proyecto:</b><br> {{process.cwd}}<br />
+            <b>Memoria total reservada (rss):</b><br> {{process.memoryUsage.rss}} bytes
+
+
+
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>
