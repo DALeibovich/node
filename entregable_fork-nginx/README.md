@@ -1,16 +1,13 @@
 # FORK-CLUSTERED + NGINX
 
-## Ejecución modo fork o cluster
+## Ejecución modo fork o cluster con escucha de modificaciones sobre el codigo
+```
 a) nodemon .\server.js --port xxxx --modo "fork o cluster"
 b) forever -w start .\server.js --port xxxx --modo "fork o cluster"
 c) pm2 start .\server.js --watch  -- -- --port xxxx  --modo "fork o cluster" (modo fork o cluster node)
 d) pm2 start .\server.js --watch -i x  -- -- --port xxxx (modo cluster pm2)
-
-## Consigna Nginx configuration
-pm2 start .\server.js -f --watch -- -- --port 8082 --modo "cluster"
-pm2 start .\server.js -f --watch -i 3 -- -- --port 8083 
-pm2 start .\server.js -f --watch -- -- --port 8084 --modo "cluster"
-pm2 start .\server.js -f --watch -i 3 -- -- --port 8085 --modo "fork"
+```
+## Consigna configuracion Nginx
 
 ```
 events {
@@ -35,8 +32,21 @@ http {
 
 }
 ```
-## Documentacion
-Si queremos 
+## Ejemplos y Documentacion
+Podemos ejecutar en modo fork o cluster a traves de pm2:
+```
+Creamos un server fork con un cluster de procesos sobre el puerto 8082:
+pm2 start .\server.js --name="Server fork 8082" -f --watch -- -- --port 8082 --modo "cluster"
+
+Creamos un server cluster de procesos sobre el puerto 8083 con maximo de 3 core:
+pm2 start .\server.js --name="Server cluster 8083" -f --watch -i 3 -- -- --port 8083 
+
+Creamos un server cluster de procesos sobre el puerto 8084 con maximo de 3 core:
+pm2 start .\server.js --name="Server cluster 8084" -f --watch -i 3 -- -- --port 8084 
+
+Creamos un server fork sobre el puerto 8085:
+pm2 start .\server.js -f --name="Server fork 8085"  --watch  -- -- --port 8085 --modo "fork"
+```
 ### Modulos necesarios
 <br> minimist, dotenv, passport, passport-local, connect-mongo, bcrypt, cookie-parser, cookie-session,  @faker-js/faker, normalizr, express, handlebars, pug, ejs, socket.io, knex, mysql, sqlite3
 
