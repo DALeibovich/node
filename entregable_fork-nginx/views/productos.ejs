@@ -1,0 +1,31 @@
+<b>Vista productos EJS</b> | <a href="/productos/ejs" target="_blank">/productos/ejs</a>
+<table class="table">
+    <thead>
+        <tr class="bg-dark text-white">
+            <th scope="col">Nombre</th>
+            <th scope="col">Autor</th>
+            <th scope="col">precio</th>
+            <th scope="col">Foto</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        <% arrObjetos.forEach(producto=> { %>
+
+            <tr class="bg-secondary text-white">
+                <th>
+                    <%= producto.nombre %>
+                        </td>
+                <td>
+                    <%= producto.autor %>
+                </td>
+                <td>
+                    <%= producto.precio %>
+                </td>
+                <td><img src="<%= producto.foto %>" width="60px"></td>
+            </tr>
+            <% }) %>
+
+    </tbody>
+</table>
