@@ -1,0 +1,3 @@
+const mongodbconn = '';
+
+module.exports = mongodbconn;
