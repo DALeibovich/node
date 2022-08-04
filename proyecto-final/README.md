@@ -7,9 +7,9 @@ https://proyecto-final-nodejs.herokuapp.com
 ```
 #### Postman collection: /tercera-entrega.postman_collection.json
 #### Ejemplos de comunicaciones
-<img src="/docs/gmail.jpeg" alt="Gmail"/>
-<img src="/docs/sms.jpeg" alt="SMS"/>
-<img src="/docs/whatsapp.jpeg" alt="Whatsapp"/>
+<img src="/proyecto-final/docs/gmail.jpeg" alt="Gmail"/>
+<img src="/proyecto-final/docs/sms.jpeg" alt="SMS"/>
+<img src="/proyecto-final/docs/whatsapp.jpeg" alt="Whatsapp"/>
 
 ### Estructura agregada
 ```
