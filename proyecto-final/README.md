@@ -5,11 +5,28 @@
 Deploy Heroku:
 https://proyecto-final-nodejs.herokuapp.com
 ```
-#### Postman collection: /tercera-entrega.postman_collection.json
+#### Funcionalidades nuevas
+```
+-Login de usuarios
+-Registro de usuario con foto
+-Ecommerce de libros (visualizar y agregar)
+-Carrito de compra (Visualizar, quitar y finalizar compra)
+-Envio de email, whatsapp y sms
+-Registro de Logger
+-Compresion de informacion
+-Perfil de usuario con foto
+
+```
+
+#### Postman collection: 
+```
+/tercera-entrega.postman_collection.json
+```
+
 #### Ejemplos de comunicaciones
-<img src="/proyecto-final/docs/gmail.jpeg" alt="Gmail"/>
-<img src="/proyecto-final/docs/sms.jpeg" alt="SMS"/>
-<img src="/proyecto-final/docs/whatsapp.jpeg" alt="Whatsapp"/>
+<img src="/proyecto-final/docs/gmail.jpeg" width="420"  alt="Gmail"/>
+<img src="/proyecto-final/docs/sms.jpeg" width="420"  alt="SMS"/>
+<img src="/proyecto-final/docs/whatsapp.jpeg" width="420"  alt="Whatsapp"/>
 
 ### Estructura agregada
 ```
