@@ -4,8 +4,12 @@ const archivoCarritos = carritos;
 
 const { archivoLibros } = require('./productos');
 // obtenemos todos los productos del archivo
-const {Carrito} = require('../models/Carrito');
+const { Carrito } = require('../models/Carrito');
 
+const { enviarEmail } = require('../utils/mailer');
+const { enviarSMS } = require('../utils/sms');
+const { enviarWhatsapp } = require('../utils/whatsapp');
+require('dotenv/config');
 /****** CONEXION BASE DE DATO EN MEMORIA ************/
 //const { db_memoria } = require('./conexionDB');
 //let archivoLibros = db_memoria;
@@ -39,14 +43,14 @@ archivoCarritos.getAll(Carrito)
     .catch(err => console.log(err));
 */
 
-const nuevoCarrito = async (obj) => {
-   
-    let ultimo =  await archivoCarritos.ultimoId() ?? 1;
+const nuevoCarrito = async (idsession = '-') => {
+
+    let ultimo = await archivoCarritos.ultimoId() ?? 1;
     let carrito = new Carrito(ultimo + 1);
     console.log(carrito)
-    await archivoCarritos.save({id: carrito.id, idHash: carrito.idHash, timestamp: carrito.timestamp, productos: carrito.productos})
+    await archivoCarritos.save({ id: carrito.id, idHash: carrito.idHash, timestamp: carrito.timestamp, idsession: idsession, productos: carrito.productos })
         .then(response => {
-            ret = response;
+            ret = response.insertedId;
         })
 
     return ret;
@@ -61,11 +65,11 @@ function existeCarrito(id) {
 
 async function borrarCarritos(id) {
     // verifica existencia del producto
-        await archivoCarritos.deleteById((id))
-            .then(response => {
-                ret = response;
-            })
-            .catch(err => ret = [{ error: err.message }]);
+    await archivoCarritos.deleteById((id))
+        .then(response => {
+            ret = response;
+        })
+        .catch(err => ret = [{ error: err.message }]);
     return ret;
 }
 
@@ -134,31 +138,63 @@ const listarCarritos = async (id = '') => {
 */
 
 const listarProductosCarrito = async (idcar) => {
-    
+    console.log('id carrito: ' + idcar)
     let ret;
     let carrito = await archivoCarritos.getById(idcar)
     return carrito[0].productos;
 }
 
 const eliminarProductosCarrito = async (idcar, idp) => {
-    
+
     let productos = [];
     let carrito = await archivoCarritos.getById(idcar)
     productos = carrito[0].productos;
     console.log(productos)
     console.log(idp)
     let restoProductos = productos.filter(prod => prod._id != idp);
-   // let indice = archivoCarritos.arrObjetos.findIndex(carrito => carrito.id === idcar);
+    // let indice = archivoCarritos.arrObjetos.findIndex(carrito => carrito.id === idcar);
     //archivoCarritos.arrObjetos[indice].productos = restoProductos;
     carrito[0].productos = restoProductos;
 
     await archivoCarritos.actualizaArchivo(carrito[0], idcar)
         .then(response => {
-           return response;
+            return response;
 
         });
 }
 
+
+const finalizarCarrito = async (req, res) => {
+    // enviar mail al admin
+    let productos = [];
+    let cuerpo_mail = '';
+    await listarProductosCarrito((req.session.idcarrito))
+        .then(rows => {
+            productos = rows;
+            productos.forEach(producto => {
+                cuerpo_mail += "-" + producto.nombre + '<br>';
+            })
+
+            // enviar email al admin
+            enviarEmail(process.env.ADMINISTRADOR_EMAIL, `Nuevo pedido de ${req.user.nombre} - ${req.user.email} `, cuerpo_mail)
+            // enviar whatsapp al admin
+            enviarWhatsapp(process.env.ADMINISTRADOR_TEL, `Nuevo pedido de: `, ` ${req.user.nombre} - ${req.user.email} `)
+            // enviar SMS al comprador
+            enviarSMS(req.user.telefono, `Nuevo pedido`, `Su pedido ha sido recibido y se encuentra en proceso`)
+            req.session.idcarrito = 0;
+        })
+    return productos;
+
+}
+
+const sumarTotal = (arrProductos) => {
+    let total = 0;
+    for (let i = 0; i < arrProductos.length; i++) {
+        total += arrProductos[i].precio;
+    }
+    return total.toFixed(2);
+    //return arrProductos.reduce((a,b) => a.precio + b.precio);
+}
 /*
 const eliminarProductosCarrito = async (idcar, idp) => {
     let carrito = existeCarrito(parseInt(idcar));
@@ -193,5 +229,7 @@ module.exports = {
     agregarProducto,
     listarProductosCarrito,
     eliminarProductosCarrito,
-    listarCarritos
+    listarCarritos,
+    sumarTotal,
+    finalizarCarrito
 };

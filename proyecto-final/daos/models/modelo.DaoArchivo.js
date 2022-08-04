@@ -1,5 +1,5 @@
 
-const {ContenedorArchivo} = require("../models/ContenedorArchivo");
+const {ContenedorArchivo} = require("../../models/ContenedorArchivo");
 const fs = require('fs');
 
 class DaoArchivo extends ContenedorArchivo {

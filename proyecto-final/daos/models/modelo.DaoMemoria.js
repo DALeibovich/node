@@ -1,4 +1,4 @@
-const ContenedorMemoria = require("../models/ContenedorMemoria");
+const ContenedorMemoria = require("../../models/ContenedorMemoria");
 
 
 class DaoMemoria extends ContenedorMemoria{

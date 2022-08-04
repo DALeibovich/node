@@ -14,5 +14,8 @@ const esAdmin = (req, res, next) =>{
 router.post('/productos', esAdmin);
 router.put('/productos/:id', esAdmin);
 router.delete('/productos/:id', esAdmin);
+router.post('/usuarios', esAdmin);
+router.put('/usuarios/:id', esAdmin);
+router.delete('/usuarios/:id', esAdmin);
 //router.delete('/carrito/*', esAdmin);
 module.exports = router;    

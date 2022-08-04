@@ -1,5 +1,5 @@
-const { FirebaseDB } = require("../models/FirebaseDB");
-const  firebasedbconn = require('../config/firebase');
+const { FirebaseDB } = require("../../models/FirebaseDB");
+const  firebasedbconn = require('../../config/firebase');
 class DaoFirebaseDB extends FirebaseDB {
     constructor(tabla = '', conexion='') {
         super(firebasedbconn, tabla, conexion);

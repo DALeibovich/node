@@ -1,6 +1,7 @@
 require('dotenv').config();
 let productos;
 let carritos;
+let usuariosDB;
 
 // DAO ARCHiVOS
 if (process.env.DB_ENGINE === 'archivo') {
@@ -44,12 +45,18 @@ if (process.env.DB_ENGINE === 'sqlite3') {
 if (process.env.DB_ENGINE === 'mongodb') {
     const { ProductosDaoMongoDB } = require('./productos/ProductoDaoMongodb');
     let productosMongoDB = new ProductosDaoMongoDB();
-    setTimeout(() => productosMongoDB.__test(), 10000); // __test(); es una funcion de ./modelo.DaoMongodb.js
+    //setTimeout(() => productosMongoDB.__test(), 10000); // __test(); es una funcion de ./modelo.DaoMongodb.js
     productos = productosMongoDB;
 
     const { CarritosDaoMongoDB } = require('./carritos/CarritosDaoMongodb');
     let carritosMongoDB = new CarritosDaoMongoDB();
     carritos = carritosMongoDB;
+
+    const { UsuariosDaoMongoDB } = require('./usuarios/UsuariosDaoMongodb');
+    let usuariosMongoDB = new UsuariosDaoMongoDB();
+    //usuariosMongoDB.conectar();
+    setTimeout(() => usuariosMongoDB.__test(), 10000);
+    usuariosDB = usuariosMongoDB;
 }
 // DAO FIREBASE
 if (process.env.DB_ENGINE === 'firebase') {
@@ -66,5 +73,6 @@ if (process.env.DB_ENGINE === 'firebase') {
 
 module.exports = {
     productos,
-    carritos
+    carritos,
+    usuariosDB
 };

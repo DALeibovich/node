@@ -1,5 +1,5 @@
 
-const { KnexDB_MySql } = require("../models/KnexDB_MySql");
+const { KnexDB_MySql } = require("../../models/KnexDB_MySql");
 
 class DaoMysql extends KnexDB_MySql {
     constructor(tabla = 'productos') {

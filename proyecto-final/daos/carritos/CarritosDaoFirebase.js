@@ -1,4 +1,4 @@
-const { DaoFirebaseDB } = require("../modelo.DaoFirebase");
+const { DaoFirebaseDB } = require("../models/modelo.DaoFirebase");
 
 class CarritosDaoFirebase extends DaoFirebaseDB {
     static tabla = 'carritos';

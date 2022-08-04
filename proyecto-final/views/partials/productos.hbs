@@ -1,0 +1,17 @@
+{{#each arrObjetos}}
+<div class="col-md-4" style="margin-bottom:40px">
+  <div class="card" align="center">
+    <img class="card-img-top" src="{{foto}}" alt="{{nombre}}" width="140">
+    <div class="card-body">
+      <p class="card-text"> <b>{{nombre}}</b><br>
+        <em>{{autor}}</em><br>
+      {{#if descripcion}}{{descripcion}} {{/if}}<br>
+        <b>${{precio}}</b><br>
+        <a class="btn btn-primary" href="/carrito/add/{{_id}}">Agregar al carrito</a>
+        <br>
+      </p>
+    </div>
+
+  </div>
+</div>
+{{/each}}

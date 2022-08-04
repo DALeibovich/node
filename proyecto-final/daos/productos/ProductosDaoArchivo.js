@@ -1,5 +1,5 @@
 
-const {DaoArchivo} = require("../modelo.DaoArchivo");
+const {DaoArchivo} = require("../models/modelo.DaoArchivo");
 const fs = require('fs');
 class ProductosDaoArchivo extends DaoArchivo {
     static tabla = 'productos.json';

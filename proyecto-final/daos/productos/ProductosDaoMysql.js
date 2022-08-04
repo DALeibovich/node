@@ -1,4 +1,4 @@
-const { DaoMysql } = require("../modelo.DaoMysql");
+const { DaoMysql } = require("../models/modelo.DaoMysql");
 
 class ProductosDaoMysql extends DaoMysql {
     static tabla = 'productos';

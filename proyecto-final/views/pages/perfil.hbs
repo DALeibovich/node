@@ -1,0 +1,69 @@
+<div class="page-header">
+    <h3>Perfil</h3>
+</div>
+
+
+
+<div class="container row">
+    <div class="jumbotron col-md-12 pull-center">
+        
+        <form autocomplete="off" action="/perfil" method="post"  enctype="multipart/form-data">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Usuario:</label>
+                    <input class="form-control" required type="text" name="username" value="{{username}}" />
+                </div>
+                <div class="form-group">
+                    <label>Nombre y apellido:</label>
+                    <input class="form-control" required type="text" name="nombre" value="{{nombre}}" />
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input class="form-control" required type="email" name="email" value="{{email}}" />
+                </div>
+
+    <div class="form-group">
+                    <label>Telefono:</label><br>
+                    <input class="form-control" required type="tel" id="telefono" name="telefono" value="{{telefono}}" />
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Dirección:</label>
+                    <input class="form-control" required type="text" name="direccion" value="{{direccion}}" />
+                </div>
+
+                <div class="form-group">
+                    <label>Edad:</label>
+                    <input class="form-control" required type="number" name="edad" value="{{edad}}" />
+                </div>
+
+            
+                <div class="form-group">
+                    <label>Foto/Avatar:</label><br>
+                    <div class="col-md-6">
+                        <img src="/img/users/{{avatar}}" width="100" height="100">
+                    </div>
+                    <div class="col-md-3"></div>
+                    <input class="form-control" type="file" name="avatar" />
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Actualizar" />
+                </div>
+            </div>
+    </div>
+
+    </form>
+    <div style="color:red"> {{message}}</div>
+
+</div>
+</div>
+<script>
+    const phoneInputField = document.querySelector("#telefono");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        initialCountry: "ar",
+        utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+</script>

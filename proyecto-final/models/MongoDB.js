@@ -157,6 +157,7 @@ class MongoDB {
 
 
     actualizaArchivo = async (valor, id, tabla=this.tabla) =>{
+        console.log(tabla + id + valor)
         const options = { upsert: true };
         let ret;
         console.log(valor.nombre + " " + id)

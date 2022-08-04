@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+                {{#if logueado}}
+                <li><a href="/dashboard">Libreria</a></li>
+                <li><a href="/perfil">Mi perfil</a></li>
+                <li><a href="/carrito">Mi carrito!</a></li>
+                  <li><a href="/logout">Salir!</a></li>
+                {{/if }}
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                {{#if logueado}}
+                
+                <li><a><b>Bienvenido {{username}}!!</b> <img src="/img/users/{{avatar}}" width="30px" height="30px"></a> </li>
+                
+              
+                {{else}}
+                <li><a href="/signup">Registrarse</a></li>
+                <li><a href="/login">Ingresar</a></li>
+                {{/if }}
+            </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

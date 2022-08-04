@@ -1,4 +1,4 @@
-const { DaoSqlite3 } = require("../modelo.DaoSqlite3");
+const { DaoSqlite3 } = require("../models/modelo.DaoSqlite3");
 
 class ProductosDaoSqlite3 extends DaoSqlite3 {
     static tabla = 'mensajes';

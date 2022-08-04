@@ -7,6 +7,15 @@ const express = require('express');
 const { Router } = express;
 const router = Router();
 
+router.get("/carrito", (req, res) => {
+    listarCarritos()
+    .then((rows) => {
+        res.render('pages/carrito', { rows, logueado: true })
+    })
+    .catch(err => console.log(err));
+   
+});
+
 // rutea todos los carritos 
 router.get('/', (req, res) => {
     listarCarritos()

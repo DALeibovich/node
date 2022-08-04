@@ -1,5 +1,31 @@
 # PROYECTO FINAL
 
+## Tercera entrega
+```
+Deploy Heroku:
+https://proyecto-final-nodejs.herokuapp.com
+```
+#### Postman collection: /tercera-entrega.postman_collection.json
+#### Ejemplos de comunicaciones
+<img src="/docs/gmail.jpeg" alt="Gmail"/>
+<img src="/docs/sms.jpeg" alt="SMS"/>
+<img src="/docs/whatsapp.jpeg" alt="Whatsapp"/>
+
+### Estructura agregada
+```
+/middlewares/[controlLoginPassportLocal.js, logs.js, compresion.js]
+/logs/[error.js, warn.js]
+/models/[User.js]
+/controllers/[usuarios.js, logs.js]
+/controllers/strategy-valitation/localPassport.js
+/routes/[usuarios.js, logins.js, shop.js]
+/daos/usuarios/ [*DaoArchivo.js | *DaoMemoria.js | *DaoFirebase.js | *DaoMongodb.js | *DaoSqlite.js | DaoMysql.js]
+/utils/[bcrypt.js, mailer.js, whatsapp.js, sms.js, winston.js]
+/views/layouts/index.js
+/views/pages/[carrito.hbs, dashboard.hbs, finalizar.hbs, login.hbs, logout.hbs, perfil.hbs, signup.hbs, finalizar.hbs]
+/public/img/users/
+
+```
 ## Segunda entrega
 #### .env (se puede setear DB_ENGINE a mongodb, mysql, sqlite3, firebase, archivo, memoria)
 

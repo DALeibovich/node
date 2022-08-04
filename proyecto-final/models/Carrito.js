@@ -1,10 +1,11 @@
 class Carrito {
 
-    constructor(id, idHash=makeRandomId(20), timestamp= Date.now(), productos = []) {
+    constructor(id, idHash=makeRandomId(20), timestamp= Date.now(), productos = [], idsession='-') {
         this.id = id;
         this.idHash = idHash;
         this.timestamp = timestamp;
         this.productos = productos;
+        this.idsession = idsession;
     }
 
  

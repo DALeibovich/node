@@ -1,4 +1,4 @@
-const { DaoMongoDB } = require("../modelo.DaoMongoDB");
+const { DaoMongoDB } = require("../models/modelo.DaoMongodb");
 
 class CarritosDaoMongoDB extends DaoMongoDB {
     static tabla = 'carritos';

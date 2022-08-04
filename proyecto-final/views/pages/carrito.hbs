@@ -1,0 +1,64 @@
+<div class="page-header">
+    <h3>Mi carrito</h3>
+</div>
+<div class="container row">
+    <div class="jumbotron col-md-7 pull-center">
+        <div class="col-md-12">
+            {{#if arrObjetosCarrito}}
+            <table class="table">
+                <thead>
+                    <tr class="bg-dark text-white" style="background-color:beige">
+                        <th scope="col">Foto</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">precio</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each arrObjetosCarrito}}
+                    <tr class="bg-secondary text-white">
+                        <td><img src="{{foto}}" width="60px"></td>
+                        <td>{{nombre}}</td>
+                        <td>{{autor}}</td>
+                        <td>${{precio}}</td>
+                        <td><a href="/carrito/q/{{_id}}">Quitar</a></td>
+
+                    </tr>
+
+                    {{/each}}
+
+                    <tr class="bg-secondary text-white" style="background-color:beige">
+                        <td></td>
+                        <td></td>
+                        <td align="right"><b>Total:</b></td>
+                        <td><b>${{total}}</b></td>
+                        <td></td>
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+            {{else}}
+            <h4>No hay productos en su carrito</h4>
+            {{/if}}
+        </div>
+    </div>
+    {{#if arrObjetosCarrito}}
+    <div class="jumbotron col-md-5 offset-md-1 pull-center" style="left:10px">
+        <form name="finalizar" action="/finalizar" method="post">
+        <h4>Dirección de envio </h4>
+ <div class="form-group">
+                   
+                    <input class="form-control" required type="text" name="direccion_envio" value="{{direccion}}" />
+                </div>
+        <h4>Forma de pago </h4>
+<input  type="radio" checked  name="formadepago" value="Contra-reembolso"> Contra reembolso
+        <hr>
+        <button type="submit" class="btn btn-primary" >Realizar pedido</button>
+        </form>
+    </div>
+    {{/if}}
+</div>

@@ -1,4 +1,4 @@
-const { KnexDB_SQLite3 } = require("../models/KnexDB_SQLite3");
+const { KnexDB_SQLite3 } = require("../../models/KnexDB_SQLite3");
 
 class DaoSqlite3 extends KnexDB_SQLite3 {
 

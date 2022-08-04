@@ -1,5 +1,5 @@
-const { MongoDB } = require("../models/MongoDB");
-const  mongodbconn = require('../config/mongodb');
+const { MongoDB } = require("../../models/MongoDB");
+const  mongodbconn = require('../../config/mongodb');
 class DaoMongoDB extends MongoDB {
     constructor(tabla = '') {
           super(mongodbconn,tabla);
