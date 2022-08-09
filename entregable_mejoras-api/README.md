@@ -38,7 +38,7 @@ PERSISTENCIA
 /daos/models/DaoMSqlite3.js
 
 DTOs:
-/dtos/foros/foros.dto.js
+/dtos/foros.dto.js
 
 VIEWS:
 /public/plantillas/mensajes.hbs
