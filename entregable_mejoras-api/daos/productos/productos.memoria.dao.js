@@ -2,7 +2,7 @@
 const { DaoMemoria } = require('../models/modelo.DaoMemoria');
 
 class ProductosDAOmemoria extends DaoMemoria{
-    static tabla = '';
+    static tabla = 'productos';
     constructor() {
         super(ProductosDAOmemoria.tabla);
     }

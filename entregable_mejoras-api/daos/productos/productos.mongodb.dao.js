@@ -2,7 +2,7 @@
 const { DaoMongoDB } = require('../models/modelo.DaoMongodb');
 
 class ProductosDAOmongodb extends DaoMongoDB{
-    static tabla = 'foros';
+    static tabla = 'productos';
     constructor() {
         super(ProductosDAOmongodb.tabla);
     }

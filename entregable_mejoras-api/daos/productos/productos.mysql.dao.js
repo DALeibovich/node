@@ -2,7 +2,7 @@
 const { DaoMysql } = require('../models/modelo.DaoMysql');
 
 class ProductosDAOmysql extends DaoMysql{
-    static tabla = 'foros';
+    static tabla = 'productos';
     constructor() {
         super(ProductosDAOmysql.tabla);
     }

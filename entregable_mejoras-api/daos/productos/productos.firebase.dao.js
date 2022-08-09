@@ -2,7 +2,7 @@
 const { DaoFirebaseDB } = require('../models/modelo.DaoFirebase');
 
 class ProductosDAOfirebase extends DaoFirebaseDB{
-    static tabla = 'foros';
+    static tabla = 'productos';
     constructor() {
         super(ProductosDAOfirebase.tabla);
     }
