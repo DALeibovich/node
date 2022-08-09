@@ -25,10 +25,11 @@ SERVICIO
 PERSISTENCIA
 /daos/productos/factoryPersistence.js
 /daos/productos/ [productos.archivo.dao.js, productos.mongodb.dao.js, productos.memoria.dao.js, productos.firebase.dao.js, productos.mysql.dao.js, productos.sqlite3.dao.js, , faker.sqlite3.dao.js]
+/daos/models/DaoFaker.js
 
 /daos/foros/factoryPersistence.js
 /daos/foros/ [foros.archivo.dao.js, foros.mongodb.dao.js, foros.memoria.dao.js, foros.firebase.dao.js, foros.mysql.dao.js, foros.sqlite3.dao.js]
-/daos/models/DaoFaker.js
+
 -----
 /daos/models/DaoArchivos.js
 /daos/models/DaoMemoria.js
