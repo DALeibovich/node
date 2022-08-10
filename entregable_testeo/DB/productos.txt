@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "nombre": "",
+    "autor": "JJ tolken",
+    "precio": "56",
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_734355-MLA50214993545_062022-O.webp",
+    "agregadoPor": "davidleibovich@gmail.com"
+  }
+]
