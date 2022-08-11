@@ -1,0 +1,34 @@
+[
+  {
+    "id": 6,
+    "nombre": "El senior desde api sssss",
+    "autor": "JJ tolken",
+    "precio": 15,
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_734355-MLA50214993545_062022-O.webp",
+    "agregadoPor": "davidleibovich@gmail.com"
+  },
+  {
+    "id": 8,
+    "nombre": "El señior desde api sssss",
+    "autor": "JJ tolken",
+    "precio": 15,
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_734355-MLA50214993545_062022-O.webp",
+    "agregadoPor": "davidleibovich@gmail.com"
+  },
+  {
+    "id": 9,
+    "nombre": "El señior desde api sssss",
+    "autor": "JJ tolken",
+    "precio": 15,
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_734355-MLA50214993545_062022-O.webp",
+    "agregadoPor": "davidleibovich@gmail.com"
+  },
+  {
+    "id": 10,
+    "nombre": "El señior desde api sssss",
+    "autor": "JJ tolken",
+    "precio": 15,
+    "foto": "https://http2.mlstatic.com/D_NQ_NP_734355-MLA50214993545_062022-O.webp",
+    "agregadoPor": "davidleibovich@gmail.com"
+  }
+]

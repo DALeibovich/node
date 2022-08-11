@@ -1,0 +1,12 @@
+  <table class="table">
+  {{#each mensajes}}
+    <tr class="">
+      <td width="40px"> <img src="{{author.avatar}}" height="40px" width="40px"></td>
+        <td >
+        <b style="color:blue">{{author.alias}}</b> <font style="color:brown">({{author.nombre}} | {{author.id}} | {{author.edad}} años)</font><br>
+         {{text}}
+        </td>
+       
+    </tr>
+    {{/each}}
+    </table>

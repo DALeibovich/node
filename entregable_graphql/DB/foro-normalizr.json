@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "author": {
+      "id": "David@",
+      "nombre": "David",
+      "apellido": "Leibovich",
+      "edad": "43",
+      "alias": "tritri",
+      "avatar": "https://st.depositphotos.com/1694341/4194/i/450/depositphotos_41943033-stock-photo-brad-pitt.jpg"
+    },
+    "text": "Bienvenidos..."
+  },
+  {
+    "id": 2,
+    "author": {
+      "id": "davidleibovich@gmail.com",
+      "nombre": "david ariel",
+      "apellido": "Leibovich",
+      "edad": "43",
+      "alias": "david",
+      "avatar": "https://st.depositphotos.com/1694341/4194/i/450/depositphotos_41943033-stock-photo-brad-pitt.jpg"
+    },
+    "text": "hola glicth"
+  },
+  {
+    "id": 3,
+    "author": {
+      "id": "davidleibovich@gmail.com",
+      "nombre": "david ariel",
+      "apellido": "Leibovich",
+      "edad": "43",
+      "alias": "david",
+      "avatar": "https://st.depositphotos.com/1694341/4194/i/450/depositphotos_41943033-stock-photo-brad-pitt.jpg"
+    },
+    "text": "como andas"
+  }
+]
