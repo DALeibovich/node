@@ -1,0 +1,23 @@
+<b>Vista productos PUG</b> | <a href="/productos/pug" target="_blank">/productos/pug</a>
+table(class="table")
+ 
+    tr(class="bg-dark text-white")
+      th(scope="col")= "Nombre"
+      th(scope="col")= Autor
+      th(scope="col")= precio
+      th(scope="col")= Foto
+   
+  
+ 
+   
+    each producto in arrObjetos
+        tr(class="bg-secondary text-white")
+            td=producto.nombre
+            td=producto.autor
+            td=producto.precio
+            td
+                img(src=producto.foto, width="60px")
+    
+   
+ 
+
