@@ -5,6 +5,9 @@
 Deploy Heroku:
 https://proyecto-final-nodejs.herokuapp.com
 
+Demo cliente: demo | clave: 1234
+Demo admin: admin | clave: 123
+
 Instalación
 npm i
 
@@ -48,7 +51,7 @@ npm run dev-cluster | node ./server_factory.js --modo="cluster" --persistence=MO
 -Salir (cerrar sesion)
 
 ```
-#### Vista API's (endpoints)
+#### Vista API's 
 ```
 -Productos (Crear, Listar, Modificar y Eliminar)
 -Carrito (Crear, Listar, Modificar, Eliminar - Agregar, Quitar y Listar productos)
@@ -56,9 +59,11 @@ npm run dev-cluster | node ./server_factory.js --modo="cluster" --persistence=MO
 -Usuarios (Crear, Listar, Modificar y Eliminar)
 
 Endoponints disponibles
-<img src="/proyecto-final/docs/api-postman.png" width="420"  alt="routes"/>
 (Ver colección de postman: /API-PROYECTO-FINAL.postman_collection.json)
 ```
+#### Enpoints
+<img src="/proyecto-final/docs/api-postman.png" width="420"  alt="routes"/>
+
 #### Caracteristicas generales
 ```
 -Ejecucion en modo FORK o CLUSTER
