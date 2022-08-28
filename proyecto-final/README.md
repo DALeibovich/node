@@ -99,7 +99,7 @@ Endoponints disponibles
 
 #### Pantallas vista cliente
 <img src="/proyecto-final/docs/img/libreria.png" width="420"  alt="Libreria Coderhouse"/>
-<img src="/proyecto-final/docs/img/productos_detalle.png" width="420"  alt="Libreria Coderhouse"/>
+<img src="/proyecto-final/docs/img/producto_detalle.png" width="420"  alt="Libreria Coderhouse"/>
 <img src="/proyecto-final/docs/img/carrito.png" width="420"  alt="Libreria Coderhouse"/>
 <img src="/proyecto-final/docs/img/ordenes.png" width="420"  alt="Libreria Coderhouse"/>
 <img src="/proyecto-final/docs/img/ordenes_detalle.png" width="420"  alt="Libreria Coderhouse"/>
@@ -109,7 +109,7 @@ Endoponints disponibles
 #### Pantallas vista administrador
 <img src="/proyecto-final/docs/img/admin_productos.png" width="420"  alt="Libreria Coderhouse"/>
 <img src="/proyecto-final/docs/img/admin_config.png" width="420"  alt="Libreria Coderhouse"/>
-<img src="/proyecto-final/docs/img/admn_chat.png" width="420"  alt="Libreria Coderhouse"/>
+<img src="/proyecto-final/docs/img/admin_chat.png" width="420"  alt="Libreria Coderhouse"/>
 <img src="/proyecto-final/docs/img/ordenes.png" width="420"  alt="Libreria Coderhouse"/>
 <img src="/proyecto-final/docs/img/ordenes_detalle.png" width="420"  alt="Libreria Coderhouse"/>
 <img src="/proyecto-final/docs/img/perfil.png" width="420"  alt="Libreria Coderhouse"/>
