@@ -1,0 +1,75 @@
+<div class="page-header">
+    <div align="left">
+        <h2>Administrador de productos</h2>
+    </div>
+</div>
+ <label>Alta / Modificación de productos</label>
+<div class="container" align="center">
+  
+    <form method="post" id="frmProducto" action="/admin/productos/{{id}}" class="" >
+
+        <div class="col-md-4">
+            <input type="hidden" id="id" name="id" value="{{id}}" class="">
+            <input type="text" name="nombre" id="nombre" class="form-control" value="{{nombre}}" placeholder="Titulo del libro" required>
+            <input type="text" name="autor" id="autor" class="form-control" placeholder="Autor"  value="{{autor}}" required>
+         <input type="text" name="foto" id="foto" class="form-control" placeholder="URL imagen"  value="{{foto}}" required>
+        </div>
+        <div class="col-md-4">            
+            <select id="genero" name="genero" required  class="form-select form-control" aria-label="Default select example" placeholder="Genero"   value="{{genero}}">
+                <option value="-">Genero</option>
+                <option value="Terror">Terror</option>
+                <option value="Novela">Novela</option>
+                <option value="Ficción">Ficción</option>
+                <option value="Infantil">Infantil</option>
+                <option value="Suspenso">Suspenso</option>
+            </select>
+            <input type="number" name="precio" step="0.01" id="precio" class="form-control"  value="{{precio}}" placeholder="Precio"
+                required>
+            <input type="number" name="stock" step="1" id="stock" class="form-control"   value="{{stock}}" placeholder="Stock" required>
+
+        </div>
+        <div class="col-md-4">
+           
+            <textarea required  name="descripcion" rows="3" id="descripcion" class="form-control" placeholder="Descripcion...">{{descripcion}}</textarea>
+            <input style="margin-top:8px; height:40px" type="submit" class="btn btn-primary form-control" value="Guardar">
+        </div>
+    </form>
+   
+</div>
+
+<br>
+<hr><br><label>Productos</label>
+
+<div class="row">
+
+    {{#each arrObjetos}}
+    <div class="col-md-6" style="margin-bottom:40px; min-height:250px">
+        <div class="card" align="left" style="border: 1px solid #ccc;" >
+           
+            <div class="card-body">
+                <div class="col-md-4"> <img class="card-img-top" src="{{foto}}" alt="{{nombre}}" width="200"  style="padding:10px"></div>
+                <div class="col-md-8">
+                <p class="card-text">Titulo: <b>{{nombre}}</b><br>
+                    Autor: <b>{{autor}}</b><br>
+                    Genero: <b>{{genero}}</b><br>
+                    Descripción: <b>{{descripcion}}</b><br>
+                    Precio: <b>${{precio}}</b><br>
+                    Stock: <b>{{stock}} u.</b>
+                    <hr>
+                    
+                    <a class="btn btn-primary" href="/admin/productos/{{_id}}">Editar</a>
+                    <a class="btn btn-primary" href="/admin/productos/delete/{{_id}}">Borrar</a>
+                    <br>
+                </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<script>
+
+    const selectElem = document.getElementById('genero').value = '{{genero}}';
+</script>

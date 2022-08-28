@@ -3,6 +3,7 @@ const  mongodbconn = require('../../config/mongodb');
 class DaoMongoDB extends MongoDB {
     constructor(tabla = '') {
           super(mongodbconn,tabla);
+         // console.log(mongodbconn + " - " + tabla);
     }
     __test = async () => {
         //const test =  new DaoMongoDB(this.tabla);

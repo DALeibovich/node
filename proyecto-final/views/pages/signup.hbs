@@ -9,6 +9,15 @@
         <form autocomplete="off" action="/register" method="post" enctype="multipart/form-data">
             <div class="col-md-6">
                 <div class="form-group">
+                    <label>Perfil: (utilizado para probar vista cliente y vista admin) </label>
+                    <select class="form-select form-control"  name="perfil" id="perfil">
+                        <option value="cliente">Cliente</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                    
+                </div>
+                
+                <div class="form-group">
                     <label>Usuario:</label>
                     <input class="form-control" required type="text" name="username" />
                 </div>
@@ -40,8 +49,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Password:</label>
+                    <label>Contraseña:</label>
                     <input class="form-control" required type="password" name="password" />
+                </div>
+                    <div class="form-group">
+                    <label>Repita contraseña:</label>
+                    <input class="form-control" required type="password" name="passwordRepetido" />
                 </div>
                 <div class="form-group">
                     <label>Foto/Avatar:</label>

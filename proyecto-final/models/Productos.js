@@ -1,6 +1,6 @@
 class Producto {
 
-    constructor(id, nombre, autor, foto, precio, descripcion, codigo, stock, timestamp = Date.now()) {
+    constructor(id, nombre, autor, foto, precio, descripcion, codigo, stock, genero='-', timestamp = Date.now()) {
         this.id = id;
         this.nombre = nombre;
         this.autor = autor;
@@ -8,8 +8,9 @@ class Producto {
         this.precio = precio;
         this.descripcion = descripcion;
         this.codigo = codigo;
-        this.stock = stock;
+        this.stock = parseInt(stock);
         this.timestamp = timestamp;
+        this.genero = genero
     }
 }
 

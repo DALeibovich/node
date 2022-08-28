@@ -1,6 +1,6 @@
 
         // funcion de notificacion a traves de la libreria Toastify
-        const notificaciones = (texto = 'Bienvenido', color = 'green', funcionClick = '') => {
+       /* const notificaciones = (texto = 'Bienvenido', color = 'green', funcionClick = '') => {
 
             Toastify({
                 text: texto,
@@ -25,3 +25,6 @@
             notificaciones(mensaje, 'red')
         }
 
+
+        
+*/

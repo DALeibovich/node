@@ -1,13 +1,19 @@
 {{#each arrObjetos}}
-<div class="col-md-4" style="margin-bottom:40px">
-  <div class="card" align="center">
-    <img class="card-img-top" src="{{foto}}" alt="{{nombre}}" width="140">
-    <div class="card-body">
+    <div class="col-md-3" style="margin-bottom:40px; min-height:500px">
+        <div class="card" align="center" style="border: 1px solid #ccc;" >
+            <img class="card-img-top" src="{{foto}}" alt="{{nombre}}" width="200"  style="padding:10px">
+            <div class="card-body">
       <p class="card-text"> <b>{{nombre}}</b><br>
         <em>{{autor}}</em><br>
-      {{#if descripcion}}{{descripcion}} {{/if}}<br>
+          <b>{{genero}}</b><br>
+      
         <b>${{precio}}</b><br>
-        <a class="btn btn-primary" href="/carrito/add/{{_id}}">Agregar al carrito</a>
+        {{#esDistinto stock 0}}
+
+        <a class="btn btn-primary" href="/carrito/add/{{_id}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Agregar</a>
+        {{/esDistinto}}
+        <a class="btn btn-primary" href="/productos/{{_id}}"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+        <br> {{#esDistinto stock 0}} <em>Disponibles: {{stock}}u.</em>{{else}} <em>Sin stock</em> {{/esDistinto}}
         <br>
       </p>
     </div>
@@ -15,3 +21,4 @@
   </div>
 </div>
 {{/each}}
+

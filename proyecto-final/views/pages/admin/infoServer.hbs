@@ -1,0 +1,27 @@
+<div class="page-header">
+    <div align="left">
+        <h2>Información de procesos y configuraciones</h2>
+    </div>
+</div>
+
+
+<div class=" row">
+    <div class="col-md-6">
+        <h4>Procesos del sistema</h4>
+        <div class="jumbotron col-sm-12">
+            <b>Cantidad de CPU-core:</b><br> {{cpu}} core<br />
+            <b>Argumentos de entrada:</b><br> {{process.argv}}<br />
+            <b>Path de ejecución:</b><br> {{process.cwd}}<br />
+            <b>Nombre de la plataforma:</b><br> {{process.platform}} / {{process.arch}}<br />
+            <b>Process id:</b><br> {{process.pid}}<br />
+            <b>Versión de node.js:</b><br> {{process.version}}<br />
+            <b>Carpeta del proyecto:</b><br> {{process.cwd}}<br />
+            <b>Memoria total reservada (rss):</b><br> {{process.memoryUsage.rss}} bytes
+        </div>
+
+    </div>
+    <div class="col-md-6">
+ <h4>Configuración del sistema</h4>
+        <pre>{{env}}</pre>
+    </div>
+</div>

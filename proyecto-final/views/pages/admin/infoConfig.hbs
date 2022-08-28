@@ -1,0 +1,26 @@
+<div class="page-header">
+    <div align="left">
+        <h2>Información de configuración</h2>
+    </div>
+</div>
+Dispondrá de una vista (pug, ejs o handlebars), que permita ver la configuración del servidor.
+
+
+    <div class="container row">
+        <div class="jumbotron col-sm-8 pull-center">
+            <b>Cantidad de CPU-core:</b><br> {{cpu}} core<br />
+            <b>Argumentos de entrada:</b><br> {{process.argv}}<br />
+            <b>Path de ejecución:</b><br> {{process.cwd}}<br />
+            <b>Nombre de la plataforma:</b><br> {{process.platform}} / {{process.arch}}<br />
+            <b>Process id:</b><br> {{process.pid}}<br />
+            <b>Versión de node.js:</b><br> {{process.version}}<br />
+           <b>Carpeta del proyecto:</b><br> {{process.cwd}}<br />
+            <b>Memoria total reservada (rss):</b><br> {{process.memoryUsage.rss}} bytes
+
+
+
+
+
+
+        </div>
+    </div>

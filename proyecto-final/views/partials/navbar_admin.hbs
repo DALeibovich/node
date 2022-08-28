@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+                {{#if logueado}}                
+                <li><a href="/admin/productos"><i class="fa fa-book" aria-hidden="true"></i>  Productos</a></li>
+                <li><a href="/admin/pedidos"><i class="fa fa-truck " aria-hidden="true"></i>  Pedidos</a></li>
+                <li><a href="/admin/chats"><i class="fa fa-life-ring" aria-hidden="true"></i> Centro de atención</a></li>
+                <li><a href="/admin/config"><i class="fa fa-cog" aria-hidden="true"></i> Config</a></li>
+                
+                <!--<li><a href="/perfil">Mi perfil</a></li>  -->              
+                <li><a href="/logout"><i class="fa fa-times" aria-hidden="true"></i> Salir!</a></li>
+               
+                {{/if }}
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                {{#if logueado}}
+
+               <li align="center">
+                   <div style="padding:4px"><a href="/perfil">  <img src="/img/users/{{avatar}}" style="border-radius: 50%;" width="30px" height="30px"><br>Administrador</a></div>
+                </li>
+
+
+                {{else}}
+                <li><a href="/signup"><i class="fa fa-times" aria-hidden="true"></i> Registrarse</a></li>
+                <li><a href="/login"><i class="fa fa-user" aria-hidden="true"></i> Ingresar</a></li>
+                
+                {{/if }}
+            </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

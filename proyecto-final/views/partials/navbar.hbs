@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -6,22 +8,33 @@
 
             <ul class="nav navbar-nav">
                 {{#if logueado}}
-                <li><a href="/dashboard">Libreria</a></li>
-                <li><a href="/perfil">Mi perfil</a></li>
-                <li><a href="/carrito">Mi carrito!</a></li>
-                  <li><a href="/logout">Salir!</a></li>
+
+
+
+                <li><a href="/productos"><i class="fa fa-book" aria-hidden="true"></i> Libreria</a></li>
+               <!-- <li><a href="/perfil">Mi perfil</a></li>-->
+                <li><a href="/carrito"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mi carrito!</a></li>
+                <li><a href="/pedidos"><i class="fa fa-truck " aria-hidden="true"></i> Mis pedidos!</a></li>
+                <li><a href="/chat"><i class="fa fa-life-ring" aria-hidden="true"></i> Chat/Ayuda</a></li>
+                <li><a href="/logout"><i class="fa fa-times" aria-hidden="true"></i> Salir!</a></li>
+               
+
+
+
                 {{/if }}
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 {{#if logueado}}
-                
-                <li><a><b>Bienvenido {{username}}!!</b> <img src="/img/users/{{avatar}}" width="30px" height="30px"></a> </li>
-                
-              
+
+                <li>
+                    <div style="padding:4px"><a href="/perfil">  <img src="/img/users/{{avatar}}" style="border-radius: 50%;" width="30px" height="30px"><br>{{username}}</a></div>
+                </li>
+
+
                 {{else}}
-                <li><a href="/signup">Registrarse</a></li>
-                <li><a href="/login">Ingresar</a></li>
+                <li><a href="/signup"><i class="fa fa-check" aria-hidden="true"></i> Registrarse</a></li>
+                <li><a href="/login"><i class="fa fa-user" aria-hidden="true"></i> Ingresar</a></li>
                 {{/if }}
             </ul>
 

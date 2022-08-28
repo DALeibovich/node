@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "fecha": 1660083860234,
+    "author": {
+      "id": "davidleibovich@gmail.com",
+      "nombre": "david ariel",
+      "apellido": "Leibovich",
+      "edad": "43",
+      "alias": "david",
+      "avatar": "https://st.depositphotos.com/1694341/4194/i/450/depositphotos_41943033-stock-photo-brad-pitt.jpg"
+    },
+    "text": "Bienvenidos...."
+  },
+  {
+    "id": 2,
+    "fecha": 1660695601577,
+    "author": {
+      "id": "admin@adminadmin.com",
+      "nombre": "Administrador HOy",
+      "alias": "admin",
+      "avatar": "/img/users/2272574-2.jpg"
+    },
+    "text": "rqwerqe"
+  }
+]

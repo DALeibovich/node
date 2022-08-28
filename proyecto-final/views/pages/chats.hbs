@@ -1,0 +1,37 @@
+<div class="page-header">
+    <div align="left">
+        <h2>Contactenos por nuestro chat</h2>
+    </div>
+</div>
+
+<div class="col-md-8">
+    <input type="hidden" value="{{email}}" name="emailUsuario" id="emailUsuario">
+    <input type="hidden" value="{{nombre}}" name="nombre" id="nombre">
+    <input type="hidden" value="{{username}}" name="alias" id="alias">
+    <input type="hidden" value="{{email}}" name="q" id="q">
+    <input type="hidden" value="/img/users/{{avatar}}" name="avatar" id="avatar">
+    <h5>Chat</h5>
+    <div id="divForo" style="background-color: #f0f0f0; height:300px; overflow-y: scroll; border:1px solid #ccc">
+    </div>
+    <form class="form-horizontal " id="frmForo">
+        <div class="row">
+            <div class="col-md-9">
+                <input type="text" id="mensaje" class="form-control" name="mensaje" placeholder="Escriba un mensaje..."
+                    style="background-color: aqua;" required>
+            </div>
+            <div class="col-md-3">
+                <input type="submit" id="btnMensaje" class="form-control btn btn-primary" value="Enviar">
+            </div>
+            <div  id="compresion" align="center" style="color:green; display: none">xx%</div>
+        </div>
+</div>
+
+<script src="/js/chat.js"></script>
+<script>
+    socket.on("mensajes_{{email}}", (data) => {
+        renderizaMensajesWebsocket(data);
+
+
+    });
+
+</script>

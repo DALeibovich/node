@@ -1,0 +1,23 @@
+  <table class="table">
+  {{#each mensajes}}
+    <tr  >
+      
+        <td >
+          <div class="{{author.alias}}"  style="background-color:rgb(252, 255, 55); width:80%; border:1px solid #ccc; border-radius:10px; margin:5px; padding:5px">
+        <img src="{{author.avatar}}" height="40px" width="40px" style="border-radius:50%"><br><b style="color:blue; ">{{author.nombre}}</b> <font style="color:brown">({{author.alias}})</font><br>
+         {{text}}
+         </div>
+        </td>
+       
+    </tr>
+    {{/each}}
+    </table>
+    <style>
+
+      .admin{
+        text-align: right;
+        background-color: rgb(66, 247, 66)!important;
+        float: right
+      }
+
+    </style>

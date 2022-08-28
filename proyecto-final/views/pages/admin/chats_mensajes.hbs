@@ -1,0 +1,70 @@
+<div class="page-header">
+    <div align="left">
+        <h2>Centro de atención :: {{username_destino}}</h2>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <h4>Clientes</h4>
+    <div id="divForoClientes"
+        style="padding:10px; background-color: #f0f0f0; height:300px; overflow-y: scroll; border:1px solid #ccc">
+
+    </div>
+</div>
+
+<div class="col-md-8">
+    <input type="hidden" value="{{email}}" name="emailUsuario" id="emailUsuario">
+    <input type="hidden" value="{{nombre}}" name="nombre" id="nombre">
+    <input type="hidden" value="{{username}}" name="alias" id="alias">
+    <input type="hidden" value="{{username_destino}}" name="q" id="q">
+    <input type="hidden" value="/img/users/{{avatar}}" name="avatar" id="avatar">
+    <!--<h4>Chat con <b>{{username_destino}}</b></h4>-->
+    Chateando con: <b>{{username_destino}}</b> <br>
+    <div id="divForo" style="background-color: #f0f0f0; height:300px; overflow-y: scroll; border:1px solid #ccc">
+    </div>
+
+
+    <form class="form-horizontal " id="frmForo">
+        <div class="row">
+
+            <div class="col-md-8">
+                <input type="text" id="mensaje" class="form-control" name="mensaje" placeholder="Escriba un mensaje..."
+                    style="background-color: aqua;" required>
+            </div>
+
+            <div class="col-md-3">
+                <input type="submit" id="btnMensajeAdmin" class="form-control btn btn-primary" value="Enviar">
+            </div>
+            <div id="compresion" align="center" style="color:green; display: none">xx%</div>
+
+        </div>
+
+
+</div>
+<br><br><br>
+<script src="/js/chat.js"></script>
+<script>
+    socket.on("mensajes_{{username_destino}}", (data) => {
+        renderizaMensajesWebsocket(data);
+
+
+    });
+
+    socket.on("clientes", (data) => {
+        let resultado = '';
+        let color;
+        for (let i = 0; i < data.length; i++) {
+            ('{{username_destino}}' == data[i].email) ? color = 55 : color = 200;
+            resultado += `
+            
+            <a href="/admin/chats/${data[i].email}"  >
+            <div  style="background-color:rgb(252, 255, ${color}); width:100%; border:1px solid #ccc; border-radius:10px; margin:5px; padding:5px">
+        <img src="${data[i].avatar}" height="40px" width="40px" style="border-radius:90%"> <b style="color:blue; ">${data[i].nombre}</b>
+         
+         </div></a><br>
+           `;
+        };
+        document.getElementById("divForoClientes").innerHTML = resultado;
+    });
+
+</script>

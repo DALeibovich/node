@@ -1,4 +1,35 @@
 <div class="page-header">
-    <div align="center"> <h2>Libros disponibles</h2></div>
+    <div align="left">
+        <h2>Libros disponibles</h2>
+        <form style="max-width: 250px;" name="frmFiltro" id="frmFiltro" class="form-horizontal"
+            action="/productos/categoria/" method="get" align="center">
+           
+            <select nombre="genero" id="genero" required  class="form-select form-control bg-success" aria-label="Default select example" placeholder="Genero">
+               
+                <option value="Terror">Terror</option>
+                <option value="Novela">Novela</option>
+                <option value="Ficción">Ficción</option>
+                <option value="Infantil">Infantil</option>
+                <option value="Suspenso">Suspenso</option>
+                <option value="">Todos</option>
+            </select>
+        </form>
+    </div>
 </div>
 {{> productos }}
+
+<script>
+    const sel = document.getElementById('genero').value = '{{genero}}';
+    const filtroGenero = document.getElementById("genero");
+    filtroGenero.addEventListener("change", () => {
+        document.frmFiltro.action = "/productos/categoria/" + filtroGenero.value.toLowerCase();
+        document.frmFiltro.submit();
+
+
+    })
+
+
+
+
+
+</script>

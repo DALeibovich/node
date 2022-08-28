@@ -1,7 +1,7 @@
 require('dotenv').config();
-let productos;
-let carritos;
-let usuariosDB;
+let productos, carritos, usuariosDB, ordenes, foros;
+//let carritos;
+//let usuariosDB;
 
 // DAO ARCHiVOS
 if (process.env.DB_ENGINE === 'archivo') {
@@ -52,11 +52,21 @@ if (process.env.DB_ENGINE === 'mongodb') {
     let carritosMongoDB = new CarritosDaoMongoDB();
     carritos = carritosMongoDB;
 
+    const { ForosDaoMongoDB } = require('./foros/ForosDaoMongodb');
+    let forosMongoDB = new ForosDaoMongoDB();
+    foros = forosMongoDB;
+
     const { UsuariosDaoMongoDB } = require('./usuarios/UsuariosDaoMongodb');
     let usuariosMongoDB = new UsuariosDaoMongoDB();
-    //usuariosMongoDB.conectar();
-    setTimeout(() => usuariosMongoDB.__test(), 10000);
     usuariosDB = usuariosMongoDB;
+
+    const { OrdenesDaoMongodb } = require('./ordenes/OrdenesDaoMongodb');
+    let ordenesMongoDB = new OrdenesDaoMongodb();
+    ordenes = ordenesMongoDB;
+    
+    //usuariosMongoDB.conectar();
+   // setTimeout(() => usuariosMongoDB.__test(), 10000);
+    
 }
 // DAO FIREBASE
 if (process.env.DB_ENGINE === 'firebase') {
@@ -74,5 +84,7 @@ if (process.env.DB_ENGINE === 'firebase') {
 module.exports = {
     productos,
     carritos,
-    usuariosDB
+    usuariosDB,
+    foros,
+    ordenes
 };

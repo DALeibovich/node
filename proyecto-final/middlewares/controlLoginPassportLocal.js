@@ -3,6 +3,7 @@ const express = require('express');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
 const {enviarEmail} = require('../utils/mailer');
+const {EmailingDTO} = require('../dtos/mailing.dto');
 const os = require("os");
 require('dotenv/config');
 // creamos el ruteo de la api 
@@ -13,13 +14,22 @@ router.use(fileUpload())
 
 
 const controlLogin = (req, res, next) => {
-    if (!req.user) {
-       
+    if (!req.user) {               
         res.redirect("/login");
         return;
     }
     next();
 };
+
+const controlAdmin = (req, res, next) => {
+    
+    if (req.user.perfil !='admin') {               
+        res.redirect("/restringido");
+        return;
+    }
+    next();
+};
+
 
 
 
@@ -32,17 +42,19 @@ router.post('/register', passport.authenticate('register', { failureRedirect: '/
         if (err) console.log(err)
         return true
     })
-    const hostname = os.hostname();
-    console.log(hostname)
-    const cuerpo = `<b>Nombre:</b> ${req.user.nombre} <br>
-    <b>Username:</b> ${req.user.username} <br>
-    <b>Email:</b> ${req.user.email} <br>
-    <b>Direccion:</b> ${req.user.direccion} <br>
-    <b>Edad:</b> ${req.user.edad} años <br>    
-    
-    `;
+  
+    const emailing = new EmailingDTO();
+    const cuerpo = emailing.NuevoUsuario(req.user);
+
     enviarEmail(process.env.ADMINISTRADOR_EMAIL,'Nuevo usuario registrado',cuerpo);
-    res.redirect('/dashboard')
+    if(req.user.perfil =='admin') {
+      
+        res.redirect('/admin/productos');
+    }else{
+       
+        res.redirect('/dashboard');
+    }
+    
 })
 
 
@@ -52,7 +64,11 @@ router.get('/failedRegister', (req, res) => {
 
 router.post('/login', passport.authenticate('login', { failureRedirect: '/login?message=Usuario o contraseña incorrectos' }), (req, res) => {
     // res.send({message: "Logged In"})
-    res.redirect('/dashboard')
+    if(req.user.perfil =='admin') {       
+        res.redirect('/admin/productos');
+    }else{      
+        res.redirect('/dashboard');
+    }
 })
 /*
 router.get('/failedLogin', (req, res) => {
@@ -73,8 +89,19 @@ router.get('/logout', (req, res) => {
     })
 })
 */
-router.get("/info", controlLogin);
-router.get("/perfil", controlLogin);
-router.get("/carrito", controlLogin);
+router.use("/dashboard", controlLogin);
+router.use("/perfil", controlLogin);
+router.use("/carrito", controlLogin);
+router.use("/carrito/*", controlLogin);
+router.use("/productos", controlLogin);
+router.use("/productos/*", controlLogin);
+router.use("/pedidos", controlLogin);
+router.use("/pedidos/*", controlLogin);
+router.use("/chat", controlLogin);
+router.use("/logout", controlLogin);
+
+router.use("/admin/*", controlLogin, controlAdmin);
+
+
 
 module.exports = router;

@@ -28,7 +28,8 @@ const initializePassport = () => {
                         edad: req.body.edad,
                         telefono: req.body.telefono,
                         direccion: req.body.direccion,
-                        avatar: req.files.avatar.name
+                        avatar: req.files.avatar.name,
+                        perfil: req.body.perfil
                     }
 
                
@@ -48,48 +49,7 @@ const initializePassport = () => {
         )
     )
 
-/*
-    passport.use(
-        'update',
-        new LocalStrategy(
-            { passReqToCallback: true },
-            async (req, id, done) => {
-                try {
-                   
-                    let user = await users.findOne({ username })
-                    if (user) return done(null, false,{message: 'El usuario ya esta registrado'})
-                    let email = await users.findOne({ email: req.body.email })
-                    if (email) return done(null, false,{message: 'El email ya esta registrado'})
-                   
-                    const actualizaUser = {
-                        username,                        
-                        nombre: req.body.nombre,
-                        email: req.body.email,
-                        name: req.body.nombre,
-                        edad: req.body.edad,
-                        telefono: req.body.telefono,
-                        direccion: req.body.direccion,
-                        avatar: req.files.avatar.name
-                    }
 
-               
-
-                    try { 
-                        let result = await users.updateOne({_id: ObjectId(id)},actualizaUser)
-                        return done(null, result)
-                    } catch(err) {
-                        // console.log(err)
-                        done(err)
-                    }
-                } catch(err) {
-                    // console.log(err)
-                    done(err)
-                }
-            }
-        )
-    )
-
-*/
     passport.use(
         'login',
         new LocalStrategy(

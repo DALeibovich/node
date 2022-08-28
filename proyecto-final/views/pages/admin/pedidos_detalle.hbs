@@ -1,0 +1,90 @@
+<div class="page-header">
+    <h3>Centro de pedidos :: detalle</h3>
+</div>
+
+<div class="container row">
+    <div class="col-md-12 pull-center">
+        <div class="col-md-12">
+
+
+
+            <div class="jumbotron col-md-4 pull-center" style="left:10px">
+
+                {{#each arrObjetosCarrito}}
+
+                <div class="col-md-12">
+                    <h4>Fecha </h4>
+                    <div class="form-group">{{dateFormat timestamp "DD/MM/YYYY - HH:mm" }}hs</div>
+                    <h4>Nro. orden </h4>
+                    <div class="form-group">{{id}} - {{estado}}</div>
+                    <h4>Cliente </h4>
+                    <div class="form-group">{{cliente.nombre}}<br>{{cliente.email}}</div>
+                    <h4>Total </h4>
+                    <div class="form-group">${{total}}</div>
+                </div>
+                <div class="col-md-12">
+                    <h4>Dirección de envio </h4>
+                    <div class="form-group">
+                        {{info.Envio}}
+                    </div>
+                    <div class="form-group">
+                        <h4>Forma de pago </h4>
+                        {{info.Pago}}
+                    </div>
+               
+
+                </div>
+
+                {{/each}}
+
+
+
+            </div>
+
+
+
+
+            <div class="col-md-8">
+
+                <table class="table">
+                    <thead>
+                        <tr class="bg-dark text-white" style="background-color:beige">
+                            <th scope="col">Foto</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {{#each productos}}
+                        <tr class="bg-primary  text-white">
+                            <td><img src="{{foto}}" width="60px"></td>
+                            <td><b>{{nombre}}</b><br><br>
+                            <em>
+                            <b>Para regalo:</b> {{regalo}}<br>
+                           <b>Dedicatoria:</b> {{dedicatoria}}
+                            </em>
+                            </td>
+                            <td>{{autor}}</td>
+                            <td>${{precio}}</td>
+                            <td>{{cantidad}} u.</td>
+                            <td><a href="/productos/{{_id}}" target="_blank" class="btn btn-primary"><i
+                                        class="fa fa-eye" aria-hidden="true"></i> Ver</a></td>
+
+                        </tr>
+
+                        {{/each}}
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

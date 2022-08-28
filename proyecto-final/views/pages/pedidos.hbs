@@ -1,0 +1,46 @@
+<div class="page-header">
+    <h2>Mis pedidos</h2>
+</div>
+<div class="container row">
+    <div class="col-md-12 pull-center">
+        <div class="col-md-12">
+            {{#if arrObjetosCarrito}}
+            <table class="table">
+                <thead>
+                    <tr class="bg-dark text-white" style="background-color:beige">
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Nro orden</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each arrObjetosCarrito}}
+                    <tr class="bg-primary  text-white">
+                        <td>{{dateFormat timestamp "DD/MM/YYYY - HH:mm" }}hs</td>
+                        <td>{{id}}</td>
+                        <td>{{cliente.nombre}} - {{cliente.email}}</td>
+                        <td>${{total}}</td>
+                         <td>{{estado}}</td>
+                        <td><a href="/pedidos/{{_id}}" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i> Detalle</a></td>
+
+                    </tr>
+
+                    {{/each}}
+
+                  
+
+
+                </tbody>
+            </table>
+            {{else}}
+            <h4>No hay pedidos realizados</h4>
+            {{/if}}
+        </div>
+    </div>
+   
+    
+</div>

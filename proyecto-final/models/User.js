@@ -8,9 +8,10 @@ const UserSchema = new mongoose.Schema({
     email: String,
     direccion: String,
     edad: Number,
-    telefono: Number,
+    telefono: String,
     password: String,
-    avatar: String
+    avatar: String,
+    perfil: String
 })
 const users = mongoose.model(collection, UserSchema)
 module.exports = {

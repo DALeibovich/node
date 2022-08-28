@@ -4,7 +4,7 @@ const compression = require('compression')
 const { Router } = express;
 const router = Router();
 
-router.get('/info', compression({
+router.get('/*', compression({
     level: 9
 }));
 

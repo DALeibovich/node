@@ -19,7 +19,7 @@ class MongoDB {
         let cliente = new mongoCliente(objConexion);
         await cliente.connect()
             .then(db => {
-                console.log('conectado a mongoDB');               
+                console.log('conectado a mongoDB: ' + this.tabla);               
                 this.mongoCliente = cliente;
                 this.mongoConexion = cliente.db();
                 return cliente.db();
@@ -57,25 +57,11 @@ class MongoDB {
             console.log("Se produjo un error: " + err);
             return null;
         }
-        return ret;
+        console.log(ret);
+        return ret.insertedId;
     }
 
-    getAll = async (tabla = this.tabla) => {
-        try {
-            await this.mongoConexion.collection(tabla).find().toArray()
-                .then(rows => this.arrObjetos = rows)
-                .catch(err => {
-                    console.log(err);
-                })
-
-
-            return this.arrObjetos;
-
-        } catch (err) {
-            console.log("No se pudo ejecutar: " + err);
-            return null;
-        }
-    }
+    
 
 
 
@@ -99,8 +85,29 @@ class MongoDB {
 
     deleteById = async (id, tabla = this.tabla) => {
         try {
+          //  if(id.length != 24 && typeof id !== Number) id=0;
+          if(id===undefined || id===null) id=0;
+          if(id.length != 24) id=0;
             let idObj = ObjectId(id)
             await this.mongoConexion.collection(tabla).deleteOne({ _id: idObj })
+                .then(rows => this.arrObjetos = rows)
+                .catch(err => {
+                    console.log(err);
+                })
+
+
+            return this.arrObjetos;
+
+        } catch (err) {
+            console.log("No se pudo ejecutar: " + err);
+            return null;
+        }
+    }
+
+
+    getAll = async (tabla = this.tabla) => {
+        try {
+            await this.mongoConexion.collection(tabla).find().toArray()
                 .then(rows => this.arrObjetos = rows)
                 .catch(err => {
                     console.log(err);
@@ -118,9 +125,11 @@ class MongoDB {
 
         let ret;
         try {
-            console.log(filtro)
+            //console.log("FILTRO" + filtro)
             await this.mongoConexion.collection(tabla).find(filtro).toArray()
-                .then(rows => ret = rows)
+                .then(rows => {
+                    ret = rows
+                })
                 .catch(err => {
                     console.log(err);
                 })
@@ -129,7 +138,7 @@ class MongoDB {
                     ret = null;
                 })
 
-            return ret;
+            return ret || [];
 
         } catch (err) {
             console.log("No se pudo ejecutar: " + err.message);
@@ -137,12 +146,15 @@ class MongoDB {
         }
     }
 
+    
+
+
     ultimoId = async (tabla = this.tabla) => {
         let ret;
         
         await this.mongoConexion.collection(tabla).find().sort({ "id": -1 }).limit(1).toArray()
             .then(rows => {
-                console.log(rows.id)
+                //console.log(rows.id)
                 ret = rows[0].id ?? 0;
             })
             .catch(err => {
@@ -157,11 +169,15 @@ class MongoDB {
 
 
     actualizaArchivo = async (valor, id, tabla=this.tabla) =>{
-        console.log(tabla + id + valor)
-        const options = { upsert: true };
+       // console.log("IDDD" + id + valor);
+        const options = { upsert: false };
         let ret;
-        console.log(valor.nombre + " " + id)
+        if(id===undefined || id===null) { id=0;}
+        //console.log("IDDD" + id );
+        
+        if(id.toString().length !== 24){ id=0};
         let query = {"_id": ObjectId(id) };
+        //console.log("IDDD" + id + valor);
         await this.mongoConexion.collection(tabla).updateOne(query,{$set: valor}, options)
         .then(rows => {
             ret = rows;
@@ -173,8 +189,12 @@ class MongoDB {
         return ret;
     }
 
+
+
     getById = async (id, tabla = this.tabla) => {
         let ret;
+        if(id===undefined || id===null || id==='') id=0;
+        if(id.length != 24) id=0;
         let query = { _id: ObjectId(id) };
         await this.getByCampo(query, tabla)
             .then(res => {
@@ -187,6 +207,9 @@ class MongoDB {
 
         return ret;
     }
+
+   
+
 
 }
 

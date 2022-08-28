@@ -1,0 +1,20 @@
+
+        <div class="page-header">
+         <h2>Acceso restringido</h2>
+        </div>
+ 
+
+ 
+        <div class="container row">
+            <div class="jumbotron col-sm-8 pull-center">
+                        <h2> No tienes acceso a esta sessi´on</h2> 
+
+                        <a href="/login">Login</a>
+            </div>          
+        </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        notificaciones(`Usted no tiene acceso a esta seccion`, 'red')
+    });
+
+</script>

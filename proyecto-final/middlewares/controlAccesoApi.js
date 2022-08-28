@@ -3,7 +3,7 @@ const express = require('express');
 const { Router } = express;
 const router = Router();
 
-console.log(process.env.ADMINISTRADOR)
+//console.log(process.env.ADMINISTRADOR)
 const administrador = process.env.ADMINISTRADOR;
 // rutea todos los productos 
 const esAdmin = (req, res, next) =>{
