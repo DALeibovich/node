@@ -159,7 +159,7 @@ if (SERVER_MODO === 'cluster') {
     const serv = server.listen(PORT, () => {
         logger.info(`Escuchando puerto ${serv.address().port} en proceso ID:(${process.pid})`);
     })
-    serv.on('error', err => log.error('Escuchando puerto ', err));
+    serv.on('error', err => logger.error('Escuchando puerto ', err));
 }
 
 /******** SERVER WEBSOCKET *************************************************/

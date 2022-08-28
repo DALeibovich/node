@@ -6,8 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./server_factory.js ",
     "start-cluster": "node ./server_factory.js -- --modo=cluster",
-    "dev": "nodemon ./server_factory.js -- --persistence=MONGOLOCAL",
-    "dev-cluster": "nodemon ./server_factory.js -- --modo=cluster --persistence=MONGOLOCAL"
+    "dev": "node ./server_factory.js -- --persistence=MONGOLOCAL",
+    "dev-cluster": "node ./server_factory.js -- --modo=cluster --persistence=MONGOLOCAL"
   },
   "keywords": [],
   "author": "",

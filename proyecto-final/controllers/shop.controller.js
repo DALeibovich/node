@@ -7,7 +7,7 @@ const {
     actualizaCarritosService,
     borrarCarritosService,
     actualizarCantidadService
-} = require('../services/carritos.Service.js');
+} = require('../services/carritos.service.js');
 
 const { actualizarStockService, existeProducto, getProductosGeneroService, getProductosService } = require('../services/productos.service');
 const { existeOrdenes, getOrdenesService, getOrdenesClienteService, agregarOrdenesService, containerOrdenes } = require('../services/ordenes.service');
