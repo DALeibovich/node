@@ -62,7 +62,7 @@ Endoponints disponibles
 (Ver colección de postman: /API-PROYECTO-FINAL.postman_collection.json)
 ```
 #### Enpoints
-<img src="/proyecto-final/docs/api-postman.png" width="420"  alt="routes"/>
+<img src="/proyecto-final/docs/img/api-postman.png" width="420"  alt="routes"/>
 
 #### Caracteristicas generales
 ```
